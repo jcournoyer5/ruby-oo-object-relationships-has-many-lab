@@ -14,10 +14,11 @@ class Author
         author.name = name
     end
     
-    def self.posts
+    def posts
+         Post.all.select {|post| post.author == self}
     end
     
-    def self.add_post(post)
+    def add_post(post)
         post.author = self
     end
     

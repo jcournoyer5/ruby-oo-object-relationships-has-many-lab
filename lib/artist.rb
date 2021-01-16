@@ -28,9 +28,6 @@ class Artist
     
     def songs
         Song.all.select {|song| song.artist == self}
-       
-        
-        #array.select {|num| num.even?} => [2,4,6]
     end    
     
     def add_song(song)
