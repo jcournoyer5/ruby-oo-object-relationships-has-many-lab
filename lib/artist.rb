@@ -1,8 +1,10 @@
+require "pry"
+
 class Artist
     
     attr_accessor :name, :song
     
-    @@songs = []
+
     @@count = 0
     
     def initialize(name)
@@ -25,14 +27,17 @@ class Artist
     end
     
     def songs
-        @@songs
+        Song.all.select {|song| song.artist == self}
+       
+        
+        #array.select {|num| num.even?} => [2,4,6]
     end    
     
-    def self.add_song(song)
-        song.artist
+    def add_song(song)
+        song.artist = self
     end 
     
-    def self.add_song_by_name(song_name)
+    def add_song_by_name(song_name)
         song = Song.new
         song.song_name = song_name
         song.artist
