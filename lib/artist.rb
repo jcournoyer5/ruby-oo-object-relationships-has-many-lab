@@ -9,14 +9,14 @@ class Artist
     
     def initialize(name)
        @name = name
-       @@count += 1
+       
     end   
     
     def self.new_artist_name(name)
         artist = Artist.new
         artist.name = name
-    
     end
+    
     
     def self.all
         @@songs
@@ -32,17 +32,19 @@ class Artist
     
     def add_song(song)
         song.artist = self
+        @@count += 1
     end 
     
     def add_song_by_name(song_name)
         song = Song.new(song_name)
         song.artist = self
+        @@count += 1
     end  
     
     def self.song_count
-        @@count.
+        @@count 
+      #  binding.pry
     end
     
     
-    end    
 end    
