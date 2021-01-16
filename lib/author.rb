@@ -18,7 +18,7 @@ class Author
     end
     
     def self.add_post(post)
-        
+        post.author = self
     end
     
     def self.add_post_by_title

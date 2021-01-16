@@ -17,10 +17,6 @@ class Post
         @@all << self
     end
     
-    def self.title(title)
-        post = Post.new
-        post.title = title
-    end
     
     
 end    
